@@ -1,10 +1,17 @@
-## ChatConnect-Pro Documentation
+## 🚀💬 ChatConnect-Pro Documentation
+![GitHub Views](https://komarev.com/ghpvc/?username=ChatConnect-Pro&style=plastic)
 
-### Introduction
+
+💲Donation: Bitcoin (Binance🪙)
+```py
+195XfKjaHkBedXptLk2iRAL3Qip2YHqzHZ
+```
+
+### 🌟 Introduction
 
 ChatConnect-Pro is an advanced integration project that seamlessly connects the WhatsApp platform with the OpenAI Chatbot, facilitating efficient communication and information exchange between the two platforms. Leveraging sophisticated automation tools and cutting-edge conversational AI capabilities, ChatConnect-Pro streamlines the interaction process without the need for OpenAI API keys, relying solely on the presence of a signed-in ChatGPT window.
 
-### Requirements
+### 📝 Requirements
 
 Before deploying the ChatConnect-Pro project, ensure the following prerequisites are in place:
 
@@ -16,7 +23,100 @@ Before deploying the ChatConnect-Pro project, ensure the following prerequisites
 - **Whatsmeow:** Install the Whatsmeow library, which acts as a bridge for communication with the WhatsApp platform.
 - **SQLite:** Configure the SQLite database connector to support data storage and management within the project.
 
-### Browser Configuration
+## :cloud: Pre-Installation
+:accessibility: Required Softwares
+<div align="center">
+  <table>
+    <tr>
+      <th>Language</th>
+      <th>Description</th>
+      <th>Version</th>
+      <th>Download Link</th>
+    </tr>
+    <tr>
+      <td>Git</td>
+      <td>Version control system</td>
+      <td>2.42.1</td>
+      <td><a href="https://www.git-scm.com/downloads">Download</a></td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>Programming language</td>
+      <td>3.11.2</td>
+      <td><a href="https://www.python.org/downloads">Download</a></td>
+    </tr>
+    <tr>
+      <td>Go</td>
+      <td>Programming language</td>
+      <td>1.21.3</td>
+      <td><a href="https://golang.org/dl/">Download</a></td>
+    </tr>
+    <tr>
+      <td>Tdm-gcc</td>
+      <td>MinGW-w64 based GCC for Windows</td>
+      <td>10.3.0.2</td>
+      <td><a href="https://jmeubank.github.io/tdm-gcc/download/">Download</a></td>
+    </tr>
+  </table>
+</div>
+    
+> While Python Installation:  
+> Add python to path, Use Admin Privileges > Disable Path Limit at the end  
+> Make sure to Restart your PC after installation of above softwares
+
+## :cloud: Installation
+
+Fireup your terminal/cmd📟
+```sh
+# Using Git
+git clone https://github.com/codingwithzaz/ChatConnect-Pro
+```
+
+```sh
+cd ChatConnect-Pro
+```
+
+```sh
+pip install -r requirements.txt
+```
+
+```sh
+playwright install firefox # Regards server.py
+```
+if you want any other browser instead of firefox, such as webkit/chrome then you have to change the browser in server.py file also
+
+```sh
+python server.py
+```
+Login for the first time
+
+> At the same time, you have to run the ```whatsapp``` client also, that is ```main.go``` file.
+For this Fireup another terminal/cmd and goto the same folder "ChatConnect-Pro" and run the following command
+```
+go run main.go
+```
+> It will automatically install the required go packages
+
+if you get the following error:
+> panic: failed to upgrade database: Binary was compiled with 'CGO_ENABLED=0', go-sqlite3 requires cgo to work. This is a stub
+> goroutine 1 [running]:
+> main.main()
+>        C:/Users/vmwar/ChatConnect-Pro/main.go:74 +0x46e
+> exit status 2
+
+Run the following command in the same terminal/cmd
+```
+set CGO_ENABLED=1
+```
+
+> If you get the 'gcc' error, make sure you have installed the correct version of TDM-GCC
+
+```go
+go run main.go
+```
+> First time it will take 5-10 to run completely!
+
+### 🌐 Browser Configuration
 
 To configure the browser settings for the ChatConnect-Pro project, follow these instructions:
 
@@ -30,7 +130,7 @@ BROWSER = PLAY.firefox.launch_persistent_context(user_data_dir=PROFILE_DIR, head
 
 - Additionally, you can change the headless mode by modifying the `headless=True` parameter. Setting it to `True` enables headless mode, which runs the browser without a user interface, making it ideal for automated tasks. Setting it to `False` activates the browser's graphical interface, allowing real-time visualization during script execution.
 
-### Headless Mode
+### 💻 Headless Mode
 
 The headless mode enables the browser to operate without a graphical user interface, allowing it to run in the background. This mode is particularly useful for automated tasks and server-side operations where a visible browser window is not required. It significantly reduces resource consumption and enhances the efficiency of the automation process.
 
@@ -57,7 +157,7 @@ In this line, time.sleep(0.2) introduces a smaller delay of 0.2 seconds. This sh
 The strategic use of time.sleep at these specific lines demonstrates the function's efficient and optimized approach to wait for and retrieve the latest non-empty message from the ChatGPT interface, enhancing the overall performance and resource management of the ChatConnect-Pro project.
 
 
-### Usage
+### ⚙️ Usage
 
 To effectively utilize the ChatConnect-Pro integration project, follow these steps:
 
@@ -76,7 +176,7 @@ To effectively utilize the ChatConnect-Pro integration project, follow these ste
 5. **Monitoring and Interaction:**
    - Monitor the ongoing communication and interaction between the WhatsApp platform and the OpenAI Chatbot through the integrated communication channel. Leverage the powerful capabilities of ChatConnect-Pro to streamline communication processes and enhance the overall user experience for both WhatsApp users and the OpenAI Chatbot.
 
-### Introduction
+### Server.py Introduction
 The `server.py` file is a Python script that facilitates communication between the OpenAI Chatbot and the WhatsApp platform. It establishes a connection between these two platforms, allowing seamless integration for the exchange of messages. The script utilizes the Flask web framework for creating the server, and the Playwright library for web automation tasks.
 
 ### Dependencies
@@ -164,3 +264,4 @@ The `multichat.py` script is designed to create a conversation between two insta
 
 ### Usage
 Ensure that the `server.py` script is already running on ports 5001 and 5002 before executing the `multichat.py` script. The script simulates a conversation between two instances of the OpenAI Chatbot, with each instance communicating with the other in an alternating manner. The `metaprompt` helps in maintaining the coherence and flow of the conversation.
+
