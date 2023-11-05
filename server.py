@@ -21,7 +21,7 @@ APP = flask.Flask(__name__)
 PLAY = sync_playwright().start()
 BROWSER = PLAY.firefox.launch_persistent_context(
     user_data_dir=PROFILE_DIR,
-    headless=True,
+    headless=False,
 )
 PAGE = BROWSER.new_page()
 
